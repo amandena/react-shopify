@@ -12,7 +12,13 @@ class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        Shopify App
+        <Cart
+          checkout={this.state.checkout}
+          isCartOpen={this.state.isCartOpen}
+          handleCartClose={this.handleCartClose}
+          updateQuantityInCart={this.updateQuantityInCart}
+          removeLineItemInCart={this.removeLineItemInCart}
+        />
       </div>
     )
   }
