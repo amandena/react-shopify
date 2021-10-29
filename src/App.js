@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import store from './store'
 import './App.css'
 import Cart from './components/Cart'
 
@@ -10,6 +12,7 @@ class App extends React.Component {
     this.handleCartClose = this.handleCartClose.bind(this)
   }
   render() {
+    const state = store.getState()
     return (
       <div className='App'>
         <Cart
@@ -24,4 +27,4 @@ class App extends React.Component {
   }
 }
 
-export default App
+export default connect((state) => state)(App)
