@@ -24,9 +24,7 @@ client.shop.fetchInfo().then((res) => {
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <IntlProvider locale={locale} messages={flattenMessages(messages[locale.substring(0, 2)])}>
-        <App locale={locale}/>
-      </IntlProvider>
+      <App/>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
