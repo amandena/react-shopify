@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import store from './store'
 import './App.css'
 import Cart from './components/Cart'
+import Products from './components/Products'
 
 class App extends React.Component {
   constructor() {
@@ -39,6 +40,11 @@ class App extends React.Component {
 
   render() {
     const state = store.getState()
+    let oProducts = <Products
+      products={state.products}
+      client={state.client}
+      addVariantToCart={this.addVariantToCart}
+    />
     return (
       <div className='App'>
         <Cart
